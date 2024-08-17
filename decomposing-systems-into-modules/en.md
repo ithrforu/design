@@ -1,10 +1,11 @@
 # On the Criteria To Be Used in Decomposing Systems into Modules.
 
-> David Lorge Parnas
-> Department of Computer Science
-> Carnegie Mellon University
-> Pittsburgh, Pa
-> Document source: https://www.engr.mun.ca/~theo/Courses/ssd/9874-downloads/Parnas-1972-criteria.pdf
+> David Lorge Parnas  
+> Department of Computer Science  
+> Carnegie Mellon University  
+> Pittsburgh, Pa  
+> Received August 1971; revised November 1971  
+> [Document source](https://www.engr.mun.ca/~theo/Courses/ssd/9874-downloads/Parnas-1972-criteria.pdf)  
 
 This paper discusses modularization as a mechanism for improving the flexibility and comprehensibility of a system while allowing the shortening of its development time. The effectiveness of  a  “modularization” is dependent upon the criteria used in dividing the system into modules. A system design problem is presented and both a conventional and  unconventional decomposition are described. It is shown that the unconventional decompositions have distinct advantages for the goals outlined. The criteria used in arriving at the decompositions are discussed. The unconventional decomposition, if implemented with the conventional  assumption that a module consists of  one or  more subroutines,  will be less efficient  in  most  cases. An alternafive  approach to implementation which does not have this effect is sketched.
 
@@ -26,9 +27,9 @@ The major advancement in the area of modular programming has been the developmen
 The benefits expected of modular programming are:
 1. Managerial-development time should be shortened because separate groups would work on each module with little need for communication.
 
-2. Product flexibility — it should be possible to make drastic changes to one module without a need to change others.
+2. Product flexibility – it should be possible to make drastic changes to one module without a need to change others.
 
-3. Comprehensibility — it should be possible to study the system one module at a time. The whole system can therefore be better designed because it is better understood.
+3. Comprehensibility – it should be possible to study the system one module at a time. The whole system can therefore be better designed because it is better understood.
 
 ## What Is Modularization?
 
@@ -81,13 +82,11 @@ index of the circular shift which comes ith in the alphabetical ordering. Formal
 
 **Module 5: Output**. This module will give the desired printing of set of lines or circular shifts.
 
-**Module 6: Master Control**. Similar in function to the
-modularization above.
+**Module 6: Master Control**. Similar in function to the modularization above.
 
 ### Comparison of the Two Modularizations
 
-**General**. Both schemes will work. The first is quite conventional; the second has been used successfully in a class project [7]. Both will reduce the programming to the relatively independent programming of a number of
-small, manageable, programs.
+**General**. Both schemes will work. The first is quite conventional; the second has been used successfully in a class project [7]. Both will reduce the programming to the relatively independent programming of a number of small, manageable, programs.
 
 Note first that the two decompositions may share all data representations and access methods. Our discussion is about two different ways of cutting up what *may* be the same object. A system built according to decomposition 1 could conceivably be identical *after assembly* to one built according to decomposition.
 
@@ -106,8 +105,7 @@ Second. The differences between the two alternatives are in the way that they ar
 5. The decision to alphabetize the list once, rather than either (a) search for each item when needed, or (b) partially alphabetize as is done in Hoare's FIND [2]. In a number of circumstances it would be advantageous to distribute the computation involved in alphabetization over the time required to produce the index.
 
 
-By looking at these changes we can see the differences between the two modularizations. The first change is confined to one module in both decompositions. For the first decomposition the second change would result in
-changes in every module! The same is true of the third change. In the first decomposition the format of the line storage in core must be used by all of the programs. In the second decomposition the story is entirely different. Knowledge of the exact way that the lines are stored is entirely hidden from all but module 1. Any change in the manner of storage can be confined to that module!
+By looking at these changes we can see the differences between the two modularizations. The first change is confined to one module in both decompositions. For the first decomposition the second change would result in changes in every module! The same is true of the third change. In the first decomposition the format of the line storage in core must be used by all of the programs. In the second decomposition the story is entirely different. Knowledge of the exact way that the lines are stored is entirely hidden from all but module 1. Any change in the manner of storage can be confined to that module!
 
 In some versions of this system there was an additional module in the decomposition. A symbol table module (as specified in [3]) was used within the line storage module. This fact was completely invisible to the rest of the system.
 
@@ -172,8 +170,6 @@ Since it is conceivable that we could have a system with the type of decompositi
 
 We have tried to demonstrate by these examples that it is almost always incorrect to begin the decomposition of a system into modules on the basis of a flowchart. We propose instead that one begins with a list of difficult design decisions or design decisions which are likely to change. Each module is then designed to hide such a decision from the others. Since, in most cases, design decisions transcend time of execution, modules will not correspond to steps in the processing. To achieve an efficient implementation we must abandon the assumption that a module is one or more subroutines, and instead allow subroutines and programs to be assembled collections of code from various modules.
 
-> Received August 1971; revised November 1971
-
 ### References
 1. Gauthier, Richard, and Pont, Stephen. *Designing Systems Programs*, (C), Prentice-Hall, Englewood Cliffs, N.J., 1970.
 2. Hoare, C. A. R. Proof of a program, FIND. *Comm. ACM 14, 1* (Jan. 1971), 39-45.
@@ -187,8 +183,8 @@ We have tried to demonstrate by these examples that it is almost always incorrec
 10. Mealy, G. H. Another look at data. Proc. AFIPS 1967 FJCC, Vol. 31, AFIPS Press, Montvale, N.J., pp. 525-534.
 11. Wulf, W. A., Russell, D. B., and Habermann, A. N. BLISS, A language for systems programming. *Comm. ACM 14, 12* (Dec. 1971), 780-790.
 
-> Communications of the ACM
-> December 1972
-> Volume 15
-> Number 12
+> Communications of the ACM  
+> December 1972  
+> Volume 15  
+> Number 12  
 
